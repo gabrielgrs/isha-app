@@ -1,7 +1,8 @@
 import Navbar from '../Navbar'
 import * as S from './styles'
+import type * as T from './types'
 
-function Layout({ children, title, description }) {
+function Layout({ children, title, description }: T.Props) {
   return (
     <S.Container>
       <Navbar />

@@ -19,7 +19,7 @@ export const Header = styled.div`
 `
 
 export const Main = styled.main`
-  padding: 40px;
+  padding: 40px 10%;
 `
 
 export const Title = styled.h1`

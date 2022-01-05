@@ -2,8 +2,6 @@ import { rgba } from 'polished'
 import styled from 'styled-components'
 import ReactDatePicker from 'react-datepicker'
 
-import type * as T from './types'
-
 export const DatePicker = styled(ReactDatePicker)<any>`
   width: 100%;
   border: none;

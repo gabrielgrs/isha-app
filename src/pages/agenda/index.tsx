@@ -37,7 +37,10 @@ const Agenda: NextPage = () => {
   }, [selectedDate])
 
   return (
-    <Layout title="Início" description="Página inicial">
+    <Layout
+      title="Agenda"
+      description="Veja as suas consultas pelo dia selecionado"
+    >
       <Row alignItems="center" marginBottom="32px">
         <Column size={4}>
           <h3>Consultas de {selectedDateText}</h3>

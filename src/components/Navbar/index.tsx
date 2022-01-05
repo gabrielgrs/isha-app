@@ -11,6 +11,7 @@ function Navbar() {
       <S.Section>
         <S.NavItem onClick={() => push('/')}>Home</S.NavItem>
         <S.NavItem onClick={() => push('/agenda')}>Agenda</S.NavItem>
+        <S.NavItem onClick={() => push('/medicos')}>Médicos</S.NavItem>
       </S.Section>
       <S.Section>
         <S.NavItem onClick={() => push('/perfil')}>Perfil</S.NavItem>
