@@ -1,7 +1,9 @@
 import type { NextPage } from 'next'
 
+import Agenda from './agenda'
+
 const Home: NextPage = () => {
-  return <div>Home</div>
+  return <Agenda />
 }
 
 export default Home
