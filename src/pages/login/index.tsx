@@ -1,9 +1,12 @@
 import type { NextPage } from 'next'
+import { useRouter } from 'next/router'
 
 import { Column, Row, Label, Textfield, Button } from '../../components'
 import * as S from './styles'
 
 const Login: NextPage = () => {
+  const { push } = useRouter()
+
   return (
     <S.Container>
       <S.Banner>
@@ -30,7 +33,10 @@ const Login: NextPage = () => {
               <span>Esqueceu a senha?</span>
             </Column>
             <Column size={12} justifySelf="end">
-              <Button>Acessar</Button>
+              <Button onClick={() => push('/')}>Acessar</Button>
+            </Column>
+            <Column size={12} justifySelf="end">
+              <span onClick={() => push('/cadastro')}>Criar nova conta</span>
             </Column>
           </Row>
         </S.Main>
