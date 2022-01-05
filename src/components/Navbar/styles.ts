@@ -9,14 +9,28 @@ export const Container = styled.nav`
   height: 100vh;
   padding-right: 8px;
   border-right: solid 1px ${({ theme }) => rgba(theme.colors.silver, 0.7)};
-  /* margin-right: 8px; */
   padding: 8px;
+  width: 100%;
+
+  ${({ theme }) => theme.breakPoints.mobile} {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    flex-direction: row;
+    height: max-content;
+    padding: 8px 10%;
+    border-top: solid 2px ${({ theme }) => theme.colors.silver};
+  }
 `
 
 export const Section = styled.div`
   display: flex;
   flex-direction: column;
   gap: 16px;
+
+  ${({ theme }) => theme.breakPoints.mobile} {
+    flex-direction: row;
+  }
 `
 
 export const NavItem = styled.div`
@@ -44,6 +58,24 @@ export const NavItem = styled.div`
 
     &:after {
       height: 100%;
+    }
+  }
+
+  ${({ theme }) => theme.breakPoints.mobile} {
+    &:after {
+      bottom: 0;
+      left: 0;
+      width: 0px;
+      height: 4px;
+    }
+
+    &:hover {
+      background: none;
+
+      &:after {
+        height: 4px;
+        width: 100%;
+      }
     }
   }
 `
