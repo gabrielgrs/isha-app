@@ -59,7 +59,7 @@ const Agenda: NextPage = () => {
         {appointments
           .filter((_, index) => index === 0)
           .map((p) => (
-            <Column size={3} key={p.id}>
+            <Column size={4} key={p.id}>
               <AppointmentCard
                 patientName={p.patient}
                 date={p.date}
@@ -75,7 +75,7 @@ const Agenda: NextPage = () => {
         {appointments
           .filter((_, index) => index > 0)
           .map((p) => (
-            <Column size={3} key={p.id}>
+            <Column size={4} key={p.id}>
               <AppointmentCard
                 patientName={p.patient}
                 date={p.date}

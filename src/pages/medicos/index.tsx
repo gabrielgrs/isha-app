@@ -6,50 +6,53 @@ import {
   Column,
   DatePicker,
   Layout,
+  Modal,
   Row,
   Textfield,
 } from '../../components'
-import AppointmentCard from '../../components/AppointmentCard'
-
-const months = [
-  'janeiro',
-  'fevereiro',
-  'março',
-  'abril',
-  'maio',
-  'junho',
-  'julho',
-  'agosto',
-  'setembro',
-  'outubro',
-  'novembro',
-  'dezembro',
-]
+import DoctorCard from '../../components/DoctorCard'
+import AppointmentFormModal from '../../components/AppointmentFormModal'
 
 const doctors = [
   {
     id: Math.random(),
-    patient: 'Gabriel Ribeiro',
-    paymentType: 'UNIMED',
-    date: addMinutes(new Date(), 15),
+    name: 'Gabriel Ribeiro',
+    healthInsurances: ['particular', 'unimed'],
+    specialties: ['homeopatia', 'clínica geral'],
+    price: 250,
   },
 ]
 
 const Agenda: NextPage = () => {
   const [name, setName] = useState('')
   const [selectedDate, setSelectedDate] = useState(undefined)
+  const [isModalOpen, setIsModalOpen] = useState(false)
+
+  const onPressToSchedule = () => {
+    setIsModalOpen(true)
+  }
 
   return (
     <Layout title="Médicos" description="Encontre seu médico">
       <Row alignItems="center" marginBottom="32px">
         <Column size={3}>
+          <AppointmentFormModal
+            isOpen={isModalOpen}
+            onClose={() => setIsModalOpen(false)}
+            name="Fulano"
+            avatar="https://png.pngtree.com/png-clipart/20190303/ourlarge/pngtree-hand-drawn-cute-doctor-png-image_736275.jpg"
+            privatePrice={100.5}
+            hours={['10:00', '10:15', '10:30']}
+            healthInsurances={['particular', 'unimed']}
+            specialties={['homeopatia', 'clínica geral']}
+          />
           <Textfield placeholder="Nome do médico" />
         </Column>
         <Column size={2}>
           <DatePicker
             selected={selectedDate}
             placeholderText="Data consulta"
-            onChange={(e) => setSelectedDate(e)}
+            onChange={(e: any) => setSelectedDate(e)}
           />
         </Column>
         <Column size={7} justifySelf="end">
@@ -58,12 +61,14 @@ const Agenda: NextPage = () => {
       </Row>
 
       <Row>
-        {doctors.map((p) => (
-          <Column size={3} key={p.id}>
-            <AppointmentCard
-              patientName={p.patient}
-              date={p.date}
-              paymentType={p.paymentType}
+        {doctors.map((d) => (
+          <Column size={4} key={d.id}>
+            <DoctorCard
+              doctorName={d.name}
+              specialties={d.specialties}
+              healthInsurances={d.healthInsurances}
+              price={d.price}
+              onPressToSchedule={onPressToSchedule}
             />
           </Column>
         ))}

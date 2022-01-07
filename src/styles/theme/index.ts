@@ -5,17 +5,30 @@ const DEFAULT_TRANSITION = 'ease-in-out'
 const createTransition = (element: string, type = DEFAULT_TRANSITION) =>
   `${element} 400ms ${type}`
 
+const colors = {
+  primary: '#4B87F4',
+  secondary: '#46E8B9',
+  black: '#1F2227',
+  white: '#F9FBFC',
+  silver: '#E3E3E3',
+  silverSky: '#EAEDF7',
+  success: '#5CF590',
+  warning: '#FF9141',
+  danger: '#FF4141',
+}
+
 const theme = {
-  colors: {
-    primary: '#4B87F4',
-    secondary: '#46E8B9',
-    black: '1F2227',
-    white: '#F9FBFC',
-    silver: '#E3E3E3',
-    silverSky: '#EAEDF7',
-    success: '#5CF590',
-    warning: '#FF9141',
-    danger: '#FF4141',
+  colors,
+  contrasts: {
+    primary: colors.white,
+    secondary: colors.white,
+    black: colors.white,
+    white: colors.black,
+    silver: colors.black,
+    silverSky: colors.black,
+    success: colors.white,
+    warning: colors.white,
+    danger: colors.white,
   },
   spacings: {
     xxs: '4px',

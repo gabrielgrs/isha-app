@@ -42,6 +42,7 @@ function AppointmentCard({ patientName, date, paymentType }) {
           <strong>Tipo:</strong> {paymentType}
         </div>
       </S.Content>
+      <S.Footer>Acessar</S.Footer>
     </S.Card>
   )
 }
