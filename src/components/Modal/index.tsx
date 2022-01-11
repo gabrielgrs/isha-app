@@ -1,7 +1,13 @@
-import { useEffect, useRef } from 'react'
+import { ReactNode, useEffect, useRef } from 'react'
 import * as S from './styles'
 
-function Modal({ children, isOpen, onClose }) {
+type Props = {
+  children: ReactNode
+  isOpen: boolean
+  onClose?: () => void
+}
+
+function Modal({ children, isOpen, onClose }: Props) {
   const ref = useRef<any>(null)
 
   useEffect(() => {

@@ -1,12 +1,20 @@
 import * as S from './styles'
 
+type Props = {
+  doctorName: string
+  price?: number | string
+  specialties: string[]
+  healthInsurances: string[]
+  onPressToSchedule: () => void
+}
+
 function DoctorCard({
   doctorName,
   price,
   specialties,
   healthInsurances,
   onPressToSchedule,
-}) {
+}: Props) {
   return (
     <S.Card>
       <S.Header>

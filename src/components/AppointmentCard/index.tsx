@@ -21,7 +21,13 @@ const months = [
   'dezembro',
 ]
 
-function AppointmentCard({ patientName, date, paymentType }) {
+type Props = {
+  patientName: string
+  date: Date
+  paymentType: string
+}
+
+function AppointmentCard({ patientName, date, paymentType }: Props) {
   const dateText = useMemo(() => {
     const text = format(date, 'MM/dd/yyyy/HH/mm')
     const [month, day, year, hour, minute] = text.split('/')

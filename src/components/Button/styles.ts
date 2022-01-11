@@ -1,6 +1,12 @@
 import styled from 'styled-components'
+import { colors } from '../../styles/theme'
 
-export const Button = styled.button<{ variant?: any; fullWidth?: boolean }>`
+type Props = {
+  variant?: keyof colors
+  fullWidth?: boolean
+}
+
+export const Button = styled.button<Props>`
   border: none;
   outline: none;
   height: 42px;

@@ -5,6 +5,17 @@ import { DatePicker } from '../DatePicker/styles'
 import { Label } from '../Label/styles'
 import * as S from './styles'
 
+type Props = {
+  isOpen: boolean
+  onClose?: () => void
+  name: string
+  avatar?: string
+  privatePrice?: string | number
+  hours: string[]
+  healthInsurances: string[]
+  specialties: string[]
+}
+
 function AppointmentFormModal({
   isOpen,
   onClose,
@@ -14,7 +25,7 @@ function AppointmentFormModal({
   hours,
   healthInsurances,
   specialties,
-}) {
+}: Props) {
   const [selectedHour, setSelectedHour] = useState('')
   const [selectedHealthInsurance, setSelectedHealthInsurance] = useState('')
   const [selectedSpecialty, setSelectedSpecialty] = useState('')
@@ -35,9 +46,11 @@ function AppointmentFormModal({
         <Column size={12}>
           <S.Grid>
             <S.Informations>
-              <div>
-                <Avatar src={avatar} alt="alt" />
-              </div>
+              {avatar && (
+                <div>
+                  <Avatar src={avatar} alt="alt" />
+                </div>
+              )}
               <div>
                 <strong>{name}</strong>
               </div>

@@ -36,3 +36,6 @@ export const Main = styled.main`
   max-width: 768px;
   justify-self: center;
 `
+
+const _ = () => null
+export default _

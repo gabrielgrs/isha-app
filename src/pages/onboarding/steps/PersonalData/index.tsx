@@ -3,7 +3,12 @@ import { Column, Row } from '../../../../components'
 import { Button } from '../../../../components/Button/styles'
 import { Textfield } from '../../../../components/Textfield/styles'
 
-function PersonalData({ onPreviousStep, onAdvanceStep }) {
+type Props = {
+  onPreviousStep: () => void
+  onAdvanceStep: () => void
+}
+
+function PersonalData({ onPreviousStep, onAdvanceStep }: Props) {
   const [selected, setSelected] = useState('')
   const profiles = [
     {

@@ -2,7 +2,7 @@ import PersonalData from './PersonalData'
 import UsageData from './UsageData'
 import ScheduleData from './ScheduleData'
 
-const steps = [
+export const steps = [
   {
     title: 'Dados pessoais',
     component: PersonalData,
@@ -17,4 +17,5 @@ const steps = [
   },
 ]
 
-export default steps
+const _ = () => null
+export default _

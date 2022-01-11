@@ -78,3 +78,6 @@ export const Step = styled.div<{
     z-index: 1;
   }
 `
+
+const _ = () => null
+export default _

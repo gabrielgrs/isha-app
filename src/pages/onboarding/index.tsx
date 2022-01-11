@@ -2,7 +2,7 @@ import { useState } from 'react'
 import { Check, PenTool } from 'react-feather'
 import { FadeWhenAppear } from '../../components'
 import * as S from './styles'
-import steps from './steps'
+import { steps } from './steps'
 
 function Onboarding() {
   const [step, setStep] = useState(0)

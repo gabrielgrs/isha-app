@@ -1,11 +1,23 @@
 import { rgba } from 'polished'
 
+export type colors = {
+  primary: string
+  secondary: string
+  black: string
+  white: string
+  silver: string
+  silverSky: string
+  success: string
+  warning: string
+  danger: string
+}
+
 const DEFAULT_TRANSITION = 'ease-in-out'
 
 const createTransition = (element: string, type = DEFAULT_TRANSITION) =>
   `${element} 400ms ${type}`
 
-const colors = {
+const colors: colors = {
   primary: '#4B87F4',
   secondary: '#46E8B9',
   black: '#1F2227',

@@ -1,6 +1,11 @@
 import * as S from './styles'
 
-function Avatar({ src, alt }) {
+type Props = {
+  src: string
+  alt: string
+}
+
+function Avatar({ src, alt }: Props) {
   return (
     <S.Container>
       <S.Image src={src} alt={alt} />

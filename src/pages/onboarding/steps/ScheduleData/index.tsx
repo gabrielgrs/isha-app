@@ -3,7 +3,12 @@ import { Column, Row } from '../../../../components'
 import { Button } from '../../../../components/Button/styles'
 import { Textfield } from '../../../../components/Textfield/styles'
 
-function PersonalInfo({ onPreviousStep, onAdvanceStep }) {
+type Props = {
+  onPreviousStep: () => void
+  onAdvanceStep: () => void
+}
+
+function ScheduleData({ onPreviousStep, onAdvanceStep }: Props) {
   const [selected, setSelected] = useState('')
   const profiles = [
     {
@@ -51,4 +56,4 @@ function PersonalInfo({ onPreviousStep, onAdvanceStep }) {
   )
 }
 
-export default PersonalInfo
+export default ScheduleData

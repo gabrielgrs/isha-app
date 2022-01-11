@@ -1,6 +1,11 @@
+import { ReactNode } from 'react'
 import * as S from './styles'
 
-function AppWrapper({ children }) {
+type Props = {
+  children: ReactNode
+}
+
+function AppWrapper({ children }: Props) {
   const isAuthenticated = true
 
   return <S.Layout isAuthenticated={isAuthenticated}>{children}</S.Layout>
